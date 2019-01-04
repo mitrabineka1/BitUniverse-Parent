@@ -269,6 +269,13 @@ public class ConstantFactory implements IConstantFactory {
     public String getSexName(Integer sex) {
         return getDictsByName("性别", sex);
     }
+    /**
+     * 获取币种名称
+     */
+    @Override
+    public String getCoinName(Integer coinId) {
+        return getDictsByName("币种", coinId);
+    }
 
     /**
      * 获取用户登录状态

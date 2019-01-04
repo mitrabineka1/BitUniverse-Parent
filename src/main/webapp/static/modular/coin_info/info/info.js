@@ -1,5 +1,5 @@
 /**
- * 币百科管理初始化
+ * 币种信息管理初始化
  */
 var Info = {
     id: "InfoTable",	//表格id
@@ -14,8 +14,8 @@ var Info = {
 Info.initColumn = function () {
     return [
         {field: 'selectItem', radio: true},
-            {title: '', field: 'id', visible: true, align: 'center', valign: 'middle'},
-            {title: '', field: 'coinId', visible: true, align: 'center', valign: 'middle'},
+            {title: '编号', field: 'id', visible: true, align: 'center', valign: 'middle'},
+            {title: '币种', field: 'coin', visible: true, align: 'center', valign: 'middle'},
             {title: '简介', field: 'info', visible: true, align: 'center', valign: 'middle'},
             {title: '编辑头像url', field: 'editImgUrl', visible: true, align: 'center', valign: 'middle'},
             {title: '板块', field: 'plate', visible: true, align: 'center', valign: 'middle'},
@@ -49,12 +49,12 @@ Info.check = function () {
 };
 
 /**
- * 点击添加币百科
+ * 点击添加币种信息
  */
 Info.openAddInfo = function () {
     var index = layer.open({
         type: 2,
-        title: '添加币百科',
+        title: '添加币种信息',
         area: ['800px', '420px'], //宽高
         fix: false, //不固定
         maxmin: true,
@@ -64,13 +64,13 @@ Info.openAddInfo = function () {
 };
 
 /**
- * 打开查看币百科详情
+ * 打开查看币种信息详情
  */
 Info.openInfoDetail = function () {
     if (this.check()) {
         var index = layer.open({
             type: 2,
-            title: '币百科详情',
+            title: '币种信息详情',
             area: ['800px', '420px'], //宽高
             fix: false, //不固定
             maxmin: true,
@@ -81,7 +81,7 @@ Info.openInfoDetail = function () {
 };
 
 /**
- * 删除币百科
+ * 删除币种信息
  */
 Info.delete = function () {
     if (this.check()) {
@@ -96,12 +96,16 @@ Info.delete = function () {
     }
 };
 
+Info.resetSearch = function () {
+    $("#coin").val("");
+    Info.search();
+};
 /**
- * 查询币百科列表
+ * 查询币种信息列表
  */
 Info.search = function () {
     var queryData = {};
-    queryData['condition'] = $("#condition").val();
+    queryData['coin'] = $("#coin").val();
     Info.table.refresh({query: queryData});
 };
 

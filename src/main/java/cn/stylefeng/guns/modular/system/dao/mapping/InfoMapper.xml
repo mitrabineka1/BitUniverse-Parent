@@ -19,13 +19,22 @@
         <result column="website" property="website" />
         <result column="white_paper" property="whitePaper" />
         <result column="explorer" property="explorer" />
-        <result column="createTime" property="createTime" />
-        <result column="updateTime" property="updateTime" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, coin_id, info, edit_img_url, plate, edit_name, edit_info, team_info, github, reddit, twitter, facebook, website, white_paper, explorer, createTime, updateTime
+        id, coin_id, info, edit_img_url, plate, edit_name, edit_info, team_info, github, reddit, twitter, facebook, website, white_paper, explorer, create_time, update_time
     </sql>
+    <select id="selectLists" resultType="map">
+        select
+        <include refid="Base_Column_List" />
+        from coin_info
+        where 1 = 1
+        <if test="coin != null and coin != ''">
+            and (coin_id = #{coin})
+        </if>
+    </select>
 
 </mapper>

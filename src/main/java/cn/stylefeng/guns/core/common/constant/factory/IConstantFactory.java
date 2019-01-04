@@ -99,6 +99,11 @@ public interface IConstantFactory {
     String getSexName(Integer sex);
 
     /**
+     * 获取币种名称
+     */
+    String getCoinName(Integer coinId);
+
+    /**
      * 获取用户登录状态
      */
     String getStatusName(Integer status);

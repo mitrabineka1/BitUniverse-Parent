@@ -1,5 +1,5 @@
 /**
- * 初始化币百科详情对话框
+ * 初始化币种信息详情对话框
  */
 var InfoInfoDlg = {
     infoInfoData : {}

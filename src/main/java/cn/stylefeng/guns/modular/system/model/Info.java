@@ -14,7 +14,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author zhaohe
- * @since 2019-01-02
+ * @since 2019-01-04
  */
 @TableName("coin_info")
 public class Info extends Model<Info> {
@@ -85,10 +85,12 @@ public class Info extends Model<Info> {
     /**
      * 创建时间
      */
+    @TableField("create_time")
     private Date createTime;
     /**
      * 更新时间
      */
+    @TableField("update_time")
     private Date updateTime;
 
 
