@@ -1,0 +1,38 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="" value="${item.id}" underline="true"/>
+                            <#input id="coin" name="币种名称" value="${item.coin}" underline="true"/>
+                            <#input id="exchangeId" name="交易所id" value="${item.exchangeId}" underline="true"/>
+                            <#input id="price" name="当前价格（rmb）" value="${item.price}" underline="true"/>
+                            <#input id="priceUsdt" name="当前价格（usdt）" value="${item.priceUsdt}" underline="true"/>
+                            <#input id="priceChange" name="24小时价格变化" value="${item.priceChange}" underline="true"/>
+                            <#input id="priceChangePercent" name="24小时价格变化百分比" value="${item.priceChangePercent}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="dayHigh" name="24小时最高价" value="${item.dayHigh}" underline="true"/>
+                            <#input id="dayLow" name="24小时最低价" value="${item.dayLow}" underline="true"/>
+                            <#input id="dayVolume" name="24小时交易量（usdt）" value="${item.dayVolume}" underline="true"/>
+                            <#input id="marketCap" name="市值" value="${item.marketCap}" underline="true"/>
+                            <#input id="circulation" name="流通量" value="${item.circulation}" underline="true"/>
+                            <#input id="rank" name="排名" value="${item.rank}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="CoinDataInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="CoinDataInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/count/coinData/coinData_info.js"></script>
+@}

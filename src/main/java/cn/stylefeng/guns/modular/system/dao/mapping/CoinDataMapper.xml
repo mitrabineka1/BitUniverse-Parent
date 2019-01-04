@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.system.dao.CoinDataMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.system.model.CoinData">
+        <id column="id" property="id" />
+        <result column="coin" property="coin" />
+        <result column="exchange_id" property="exchangeId" />
+        <result column="price" property="price" />
+        <result column="price_usdt" property="priceUsdt" />
+        <result column="price_change" property="priceChange" />
+        <result column="price_change_percent" property="priceChangePercent" />
+        <result column="day_high" property="dayHigh" />
+        <result column="day_low" property="dayLow" />
+        <result column="day_volume" property="dayVolume" />
+        <result column="market_cap" property="marketCap" />
+        <result column="circulation" property="circulation" />
+        <result column="rank" property="rank" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, coin, exchange_id, price, price_usdt, price_change, price_change_percent, day_high, day_low, day_volume, market_cap, circulation, rank
+    </sql>
+
+</mapper>

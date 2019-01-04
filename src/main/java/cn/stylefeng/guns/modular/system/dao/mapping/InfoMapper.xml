@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.system.dao.InfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.system.model.Info">
+        <id column="id" property="id" />
+        <result column="coin_id" property="coinId" />
+        <result column="info" property="info" />
+        <result column="edit_img_url" property="editImgUrl" />
+        <result column="plate" property="plate" />
+        <result column="edit_name" property="editName" />
+        <result column="edit_info" property="editInfo" />
+        <result column="team_info" property="teamInfo" />
+        <result column="github" property="github" />
+        <result column="reddit" property="reddit" />
+        <result column="twitter" property="twitter" />
+        <result column="facebook" property="facebook" />
+        <result column="website" property="website" />
+        <result column="white_paper" property="whitePaper" />
+        <result column="explorer" property="explorer" />
+        <result column="createTime" property="createTime" />
+        <result column="updateTime" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, coin_id, info, edit_img_url, plate, edit_name, edit_info, team_info, github, reddit, twitter, facebook, website, white_paper, explorer, createTime, updateTime
+    </sql>
+
+</mapper>

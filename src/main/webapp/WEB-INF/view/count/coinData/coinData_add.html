@@ -1,0 +1,38 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="" underline="true"/>
+                            <#input id="coin" name="币种名称" underline="true"/>
+                            <#input id="exchangeId" name="交易所id" underline="true"/>
+                            <#input id="price" name="当前价格（rmb）" underline="true"/>
+                            <#input id="priceUsdt" name="当前价格（usdt）" underline="true"/>
+                            <#input id="priceChange" name="24小时价格变化" underline="true"/>
+                            <#input id="priceChangePercent" name="24小时价格变化百分比"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="dayHigh" name="24小时最高价" underline="true"/>
+                            <#input id="dayLow" name="24小时最低价" underline="true"/>
+                            <#input id="dayVolume" name="24小时交易量（usdt）" underline="true"/>
+                            <#input id="marketCap" name="市值" underline="true"/>
+                            <#input id="circulation" name="流通量" underline="true"/>
+                            <#input id="rank" name="排名" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="CoinDataInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="CoinDataInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/count/coinData/coinData_info.js"></script>
+@}

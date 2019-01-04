@@ -1,0 +1,31 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="" value="${item.id}" underline="true"/>
+                            <#input id="coin" name="币种名称" value="${item.coin}" underline="true"/>
+                            <#input id="exchangeId" name="交易所id" value="${item.exchangeId}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="param" name="参数 大单 中单 小单 流入流出/数量" value="${item.param}" underline="true"/>
+                            <#input id="type" name="资金流向 0流入 1流出" value="${item.type}" underline="true"/>
+                            <#input id="amount" name="金额" value="${item.amount}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="CapDistributionInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="CapDistributionInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/count/capDistribution/capDistribution_info.js"></script>
+@}
