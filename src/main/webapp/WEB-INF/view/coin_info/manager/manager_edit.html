@@ -1,0 +1,41 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="" value="${item.id}" underline="true"/>
+                            <#input id="name" name="币种名称" value="${item.name}" underline="true"/>
+                            <#input id="symbol" name="币种代码" value="${item.symbol}" underline="true"/>
+                            <#input id="websiteSlug" name="站点名称" value="${item.websiteSlug}" underline="true"/>
+                            <#input id="logoUrl" name="币种logo图片地址" value="${item.logoUrl}" underline="true"/>
+                            <#input id="urlTransaction" name="获取交易信息" value="${item.urlTransaction}" underline="true"/>
+                            <#input id="urlAddressInfo" name="获取地址信息（余额）" value="${item.urlAddressInfo}" underline="true"/>
+                            <#input id="circulatingSupply" name="流通量" value="${item.circulatingSupply}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="marketCap" name="市值" value="${item.marketCap}" underline="true"/>
+                            <#input id="volume24h" name="24H成交额" value="${item.volume24h}" underline="true"/>
+                            <#input id="maxSupply" name="发行量" value="${item.maxSupply}" underline="true"/>
+                            <#input id="markeyRatio" name="全球市值占比" value="${item.markeyRatio}" underline="true"/>
+                            <#input id="turnoverRate" name="换手率" value="${item.turnoverRate}" underline="true"/>
+                            <#input id="circulationRate" name="流通率" value="${item.circulationRate}" underline="true"/>
+                            <#input id="createTime" name="创建时间" value="${item.createTime}" underline="true"/>
+                            <#input id="updateTime" name="更新时间" value="${item.updateTime}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="ManagerInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ManagerInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/coin_info/manager/manager_info.js"></script>
+@}

@@ -71,7 +71,6 @@ public class InfoController extends BaseController {
     @RequestMapping(value = "/list")
     @ResponseBody
     public Object list(String coin) {
-
         List<Map<String, Object>> list = infoService.selectLists(coin);
         return new InfoWarpper(list).wrap();
     }

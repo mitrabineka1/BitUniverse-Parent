@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.system.dao.CoinPriceMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.system.model.CoinPrice">
+        <id column="id" property="id" />
+        <result column="c1" property="c1" />
+        <result column="c2" property="c2" />
+        <result column="exchange_id" property="exchangeId" />
+        <result column="price" property="price" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, c1, c2, exchange_id, price
+    </sql>
+
+    <select id="selectLists" resultType="java.util.Map">
+        select <include refid="Base_Column_List" /> from coin_price where 1=1
+        <if test="c1 != null and c1 != ''">
+            and (c1 = #{c1})
+        </if>
+        <if test="c2 != null and c2 != ''">
+            and (c2 = #{c2})
+        </if>
+        <if test="eid != null and eid != ''">
+            and (exchange_id = #{eid})
+        </if>
+    </select>
+</mapper>

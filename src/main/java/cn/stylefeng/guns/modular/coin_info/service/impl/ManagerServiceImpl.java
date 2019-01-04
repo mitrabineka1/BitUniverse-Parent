@@ -3,9 +3,9 @@ package cn.stylefeng.guns.modular.coin_info.service.impl;
 import cn.stylefeng.guns.core.common.util.DictUtils;
 import cn.stylefeng.guns.modular.system.dao.DictMapper;
 import cn.stylefeng.guns.modular.system.model.Dict;
-import cn.stylefeng.guns.modular.system.model.Info;
-import cn.stylefeng.guns.modular.system.dao.InfoMapper;
-import cn.stylefeng.guns.modular.coin_info.service.IInfoService;
+import cn.stylefeng.guns.modular.system.model.Manager;
+import cn.stylefeng.guns.modular.system.dao.ManagerMapper;
+import cn.stylefeng.guns.modular.coin_info.service.IManagerService;
 import cn.stylefeng.roses.core.util.SpringContextHolder;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.mapper.Wrapper;
@@ -24,13 +24,6 @@ import java.util.Map;
  * @since 2019-01-04
  */
 @Service
-public class InfoServiceImpl extends ServiceImpl<InfoMapper, Info> implements IInfoService {
+public class ManagerServiceImpl extends ServiceImpl<ManagerMapper, Manager> implements IManagerService {
 
-    private DictMapper dictMapper = SpringContextHolder.getBean(DictMapper.class);
-
-    @Override
-    public List<Map<String, Object>> selectLists(String coin) {
-        coin = DictUtils.getDict(coin);
-        return this.baseMapper.selectLists(coin);
-    }
 }

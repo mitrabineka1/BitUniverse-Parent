@@ -178,7 +178,7 @@ MgrUser.resetSearch = function () {
     $("#endTime").val("");
 
     MgrUser.search();
-}
+};
 
 MgrUser.search = function () {
     var queryData = {};

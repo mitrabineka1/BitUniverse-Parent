@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.system.dao.ManagerMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.system.model.Manager">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="symbol" property="symbol" />
+        <result column="website_slug" property="websiteSlug" />
+        <result column="logo_url" property="logoUrl" />
+        <result column="url_transaction" property="urlTransaction" />
+        <result column="url_address_info" property="urlAddressInfo" />
+        <result column="circulating_supply" property="circulatingSupply" />
+        <result column="market_cap" property="marketCap" />
+        <result column="volume_24h" property="volume24h" />
+        <result column="max_supply" property="maxSupply" />
+        <result column="markey_ratio" property="markeyRatio" />
+        <result column="turnover_rate" property="turnoverRate" />
+        <result column="circulation_rate" property="circulationRate" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, symbol, website_slug, logo_url, url_transaction, url_address_info, circulating_supply, market_cap, volume_24h, max_supply, markey_ratio, turnover_rate, circulation_rate, create_time, update_time
+    </sql>
+
+
+</mapper>

@@ -276,6 +276,13 @@ public class ConstantFactory implements IConstantFactory {
     public String getCoinName(Integer coinId) {
         return getDictsByName("币种", coinId);
     }
+    /**
+     * 获取币种名称
+     */
+    @Override
+    public String getExchangeName(Integer exchangeId) {
+        return getDictsByName("交易所", exchangeId);
+    }
 
     /**
      * 获取用户登录状态

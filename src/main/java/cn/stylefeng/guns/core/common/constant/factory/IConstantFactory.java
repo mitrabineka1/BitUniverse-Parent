@@ -104,6 +104,11 @@ public interface IConstantFactory {
     String getCoinName(Integer coinId);
 
     /**
+     * 获取交易所信息
+     */
+    String getExchangeName(Integer exchangeId);
+
+    /**
      * 获取用户登录状态
      */
     String getStatusName(Integer status);
