@@ -10,6 +10,7 @@ import cn.stylefeng.roses.core.util.SpringContextHolder;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,9 +29,16 @@ public class InfoServiceImpl extends ServiceImpl<InfoMapper, Info> implements II
 
     private DictMapper dictMapper = SpringContextHolder.getBean(DictMapper.class);
 
+    @Autowired
+    private InfoMapper infoMapper;
     @Override
     public List<Map<String, Object>> selectLists(String coin) {
         coin = DictUtils.getDict(coin);
         return this.baseMapper.selectLists(coin);
+    }
+
+    @Override
+    public void deleteByCoinId(Integer coinId) {
+        infoMapper.deleteByCoinId(coinId);
     }
 }

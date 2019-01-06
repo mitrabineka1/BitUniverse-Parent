@@ -19,4 +19,5 @@ import java.util.Map;
 public interface InfoMapper extends BaseMapper<Info> {
     List<Map<String, Object>> selectLists(@Param("coin") String coin);
 
+    void deleteByCoinId(@Param("coinId")Integer coinId);
 }

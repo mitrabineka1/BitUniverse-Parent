@@ -29,8 +29,6 @@ Info.initColumn = function () {
             {title: '官网', field: 'website', visible: true, align: 'center', valign: 'middle'},
             {title: '白皮书', field: 'whitePaper', visible: true, align: 'center', valign: 'middle'},
             {title: '区块站', field: 'explorer', visible: true, align: 'center', valign: 'middle'},
-            {title: '创建时间', field: 'createTime', visible: true, align: 'center', valign: 'middle'},
-            {title: '更新时间', field: 'updateTime', visible: true, align: 'center', valign: 'middle'}
     ];
 };
 

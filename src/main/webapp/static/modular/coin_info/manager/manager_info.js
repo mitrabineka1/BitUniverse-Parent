@@ -59,8 +59,20 @@ ManagerInfoDlg.collectData = function() {
     .set('markeyRatio')
     .set('turnoverRate')
     .set('circulationRate')
-    .set('createTime')
-    .set('updateTime');
+    .set('info')
+    .set('editImgUrl')
+    .set('plate')
+    .set('editName')
+    .set('editInfo')
+    .set('teamInfo')
+    .set('github')
+    .set('reddit')
+    .set('twitter')
+    .set('website')
+    .set('facebook')
+    .set('whitePaper')
+    .set('explorer')
+    ;
 }
 
 /**

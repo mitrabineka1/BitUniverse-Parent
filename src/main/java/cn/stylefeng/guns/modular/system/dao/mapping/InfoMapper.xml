@@ -37,4 +37,7 @@
         </if>
     </select>
 
+    <delete id="deleteByCoinId">
+		delete from coin_info where coin_id = #{coinId}
+	</delete>
 </mapper>

@@ -1,8 +1,11 @@
 package cn.stylefeng.guns.modular.coin_info.controller;
 
+import cn.stylefeng.guns.modular.coin_info.service.IInfoService;
+import cn.stylefeng.guns.modular.system.model.Info;
 import cn.stylefeng.roses.core.base.controller.BaseController;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.mapper.Wrapper;
+import io.swagger.models.auth.In;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,6 +34,8 @@ public class ManagerController extends BaseController {
 
     @Autowired
     private IManagerService managerService;
+    @Autowired
+    private IInfoService infoService;
 
     /**
      * 跳转到币种动态信息首页
@@ -75,8 +80,10 @@ public class ManagerController extends BaseController {
      */
     @RequestMapping(value = "/add")
     @ResponseBody
-    public Object add(Manager manager) {
+    public Object add(Manager manager, Info info) {
         managerService.insert(manager);
+        info.setCoinId(manager.getId());
+        infoService.insert(info);
         return SUCCESS_TIP;
     }
 
@@ -87,6 +94,7 @@ public class ManagerController extends BaseController {
     @ResponseBody
     public Object delete(@RequestParam Integer managerId) {
         managerService.deleteById(managerId);
+        infoService.deleteByCoinId(managerId);
         return SUCCESS_TIP;
     }
 

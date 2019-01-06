@@ -17,4 +17,6 @@ import java.util.Map;
 public interface IInfoService extends IService<Info> {
 
     List<Map<String, Object>> selectLists(String coin);
+
+    void deleteByCoinId(Integer managerId);
 }

@@ -14,7 +14,7 @@ var Manager = {
 Manager.initColumn = function () {
     return [
         {field: 'selectItem', radio: true},
-            {title: '', field: 'id', visible: true, align: 'center', valign: 'middle'},
+            {title: 'coin_manager', field: 'id', visible: true, align: 'center', valign: 'middle'},
             {title: '币种名称', field: 'name', visible: true, align: 'center', valign: 'middle'},
             {title: '币种代码', field: 'symbol', visible: true, align: 'center', valign: 'middle'},
             {title: '站点名称', field: 'websiteSlug', visible: true, align: 'center', valign: 'middle'},
@@ -27,9 +27,7 @@ Manager.initColumn = function () {
             {title: '发行量', field: 'maxSupply', visible: true, align: 'center', valign: 'middle'},
             {title: '全球市值占比', field: 'markeyRatio', visible: true, align: 'center', valign: 'middle'},
             {title: '换手率', field: 'turnoverRate', visible: true, align: 'center', valign: 'middle'},
-            {title: '流通率', field: 'circulationRate', visible: true, align: 'center', valign: 'middle'},
-            {title: '创建时间', field: 'createTime', visible: true, align: 'center', valign: 'middle'},
-            {title: '更新时间', field: 'updateTime', visible: true, align: 'center', valign: 'middle'}
+            {title: '流通率', field: 'circulationRate', visible: true, align: 'center', valign: 'middle'}
     ];
 };
 
@@ -54,7 +52,7 @@ Manager.openAddManager = function () {
     var index = layer.open({
         type: 2,
         title: '添加币种动态信息',
-        area: ['800px', '420px'], //宽高
+        area: ['1600px', '700px'], //宽高
         fix: false, //不固定
         maxmin: true,
         content: Feng.ctxPath + '/manager/manager_add'
