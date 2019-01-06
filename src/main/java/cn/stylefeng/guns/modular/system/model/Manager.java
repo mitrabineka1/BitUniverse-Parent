@@ -86,16 +86,7 @@ public class Manager extends Model<Manager> {
      */
     @TableField("circulation_rate")
     private String circulationRate;
-    /**
-     * 创建时间
-     */
-    @TableField("create_time")
-    private Date createTime;
-    /**
-     * 更新时间
-     */
-    @TableField("update_time")
-    private Date updateTime;
+
 
 
     public Integer getId() {
@@ -210,21 +201,6 @@ public class Manager extends Model<Manager> {
         this.circulationRate = circulationRate;
     }
 
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
 
     @Override
     protected Serializable pkVal() {
@@ -248,8 +224,6 @@ public class Manager extends Model<Manager> {
         ", markeyRatio=" + markeyRatio +
         ", turnoverRate=" + turnoverRate +
         ", circulationRate=" + circulationRate +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
         "}";
     }
 }

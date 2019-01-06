@@ -82,16 +82,6 @@ public class Info extends Model<Info> {
      * 区块站
      */
     private String explorer;
-    /**
-     * 创建时间
-     */
-    @TableField("create_time")
-    private Date createTime;
-    /**
-     * 更新时间
-     */
-    @TableField("update_time")
-    private Date updateTime;
 
 
     public Integer getId() {
@@ -214,22 +204,6 @@ public class Info extends Model<Info> {
         this.explorer = explorer;
     }
 
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
-
     @Override
     protected Serializable pkVal() {
         return this.id;
@@ -253,8 +227,6 @@ public class Info extends Model<Info> {
         ", website=" + website +
         ", whitePaper=" + whitePaper +
         ", explorer=" + explorer +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
         "}";
     }
 }
