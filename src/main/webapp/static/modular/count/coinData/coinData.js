@@ -14,7 +14,7 @@ var CoinData = {
 CoinData.initColumn = function () {
     return [
         {field: 'selectItem', radio: true},
-            {title: '', field: 'id', visible: true, align: 'center', valign: 'middle'},
+            {title: 'coinDate', field: 'id', visible: true, align: 'center', valign: 'middle'},
             {title: '币种名称', field: 'coin', visible: true, align: 'center', valign: 'middle'},
             {title: '交易所id', field: 'exchangeId', visible: true, align: 'center', valign: 'middle'},
             {title: '当前价格（rmb）', field: 'price', visible: true, align: 'center', valign: 'middle'},

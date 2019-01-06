@@ -14,7 +14,7 @@ var CoinPrice = {
 CoinPrice.initColumn = function () {
     return [
         {field: 'selectItem', radio: true},
-            {title: '', field: 'id', visible: true, align: 'center', valign: 'middle'},
+            {title: 'coinPrice', field: 'id', visible: true, align: 'center', valign: 'middle'},
             {title: '计价币', field: 'coin1', visible: true, align: 'center', valign: 'middle'},
             {title: '交易币', field: 'coin2', visible: true, align: 'center', valign: 'middle'},
             {title: '交易所id', field: 'eid', visible: true, align: 'center', valign: 'middle'},

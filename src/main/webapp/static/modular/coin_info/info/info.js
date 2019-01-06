@@ -14,7 +14,7 @@ var Info = {
 Info.initColumn = function () {
     return [
         {field: 'selectItem', radio: true},
-            {title: '编号', field: 'id', visible: true, align: 'center', valign: 'middle'},
+            {title: 'coinInfo', field: 'id', visible: true, align: 'center', valign: 'middle'},
             {title: '币种', field: 'coin', visible: true, align: 'center', valign: 'middle'},
             {title: '简介', field: 'info', visible: true, align: 'center', valign: 'middle'},
             {title: '编辑头像url', field: 'editImgUrl', visible: true, align: 'center', valign: 'middle'},

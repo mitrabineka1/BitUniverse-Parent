@@ -14,7 +14,7 @@ var Manager = {
 Manager.initColumn = function () {
     return [
         {field: 'selectItem', radio: true},
-            {title: 'coin_manager', field: 'id', visible: true, align: 'center', valign: 'middle'},
+            {title: 'coinManager', field: 'id', visible: true, align: 'center', valign: 'middle'},
             {title: '币种名称', field: 'name', visible: true, align: 'center', valign: 'middle'},
             {title: '币种代码', field: 'symbol', visible: true, align: 'center', valign: 'middle'},
             {title: '站点名称', field: 'websiteSlug', visible: true, align: 'center', valign: 'middle'},

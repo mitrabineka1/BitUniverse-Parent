@@ -14,7 +14,7 @@ var CapDistribution = {
 CapDistribution.initColumn = function () {
     return [
         {field: 'selectItem', radio: true},
-            {title: '', field: 'id', visible: true, align: 'center', valign: 'middle'},
+            {title: 'capDistribution', field: 'id', visible: true, align: 'center', valign: 'middle'},
             {title: '币种名称', field: 'coin', visible: true, align: 'center', valign: 'middle'},
             {title: '交易所id', field: 'exchangeId', visible: true, align: 'center', valign: 'middle'},
             {title: '参数 大单 中单 小单 流入流出/数量', field: 'param', visible: true, align: 'center', valign: 'middle'},
