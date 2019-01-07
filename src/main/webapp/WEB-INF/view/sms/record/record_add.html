@@ -1,0 +1,33 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="Id" underline="true"/>
+                            <#input id="phone" name="手机号" underline="true"/>
+                            <#input id="type" name="类型 1:注册 2:其他" underline="true"/>
+                            <#input id="state" name="返回状态"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="code" name="短信验证码" underline="true"/>
+                            <#input id="times" name="状态 0:无效 1有效" underline="true"/>
+                            <#input id="createTime" name="创建时间" underline="true"/>
+                            <#input id="updateTime" name="更新时间" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="RecordInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="RecordInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/sms/record/record_info.js"></script>
+@}

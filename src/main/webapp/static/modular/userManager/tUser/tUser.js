@@ -100,7 +100,6 @@ TUser.search = function () {
 };
 TUser.resetSearch = function () {
     $("#phone").val("");
-
     TUser.search();
 };
 
