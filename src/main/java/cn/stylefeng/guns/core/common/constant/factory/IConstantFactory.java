@@ -102,6 +102,10 @@ public interface IConstantFactory {
      * 获取币种名称
      */
     String getCoinName(Integer coinId);
+    /**
+     * 获取交易类型
+     */
+    String getOrderTypeName(Integer type);
 
     /**
      * 获取交易所信息

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.system.dao.SuperOrderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.system.model.SuperOrder">
+        <id column="id" property="id" />
+        <result column="coin" property="coin" />
+        <result column="exchange_id" property="exchangeId" />
+        <result column="price" property="price" />
+        <result column="size" property="size" />
+        <result column="side" property="side" />
+        <result column="total" property="total" />
+        <result column="time" property="time" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, coin, exchange_id, price, size, side, total, time
+    </sql>
+    <select id="selectLists" resultType="map">
+        select <include refid="Base_Column_List" /> from super_order
+    </select>
+
+</mapper>

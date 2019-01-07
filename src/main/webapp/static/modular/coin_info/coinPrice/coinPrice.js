@@ -90,7 +90,7 @@ CoinPrice.resetSearch = function () {
     $("#eid").val("");
 
     CoinPrice.search();
-}
+};
 /**
  * 查询币种最新价格列表
  */
