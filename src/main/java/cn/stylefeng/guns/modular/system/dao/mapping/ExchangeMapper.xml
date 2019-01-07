@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.system.dao.ExchangeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.system.model.Exchange">
+        <id column="id" property="id" />
+        <result column="ex_id" property="exId" />
+        <result column="name" property="name" />
+        <result column="slug" property="slug" />
+        <result column="logo_url" property="logoUrl" />
+        <result column="website" property="website" />
+        <result column="twitter" property="twitter" />
+        <result column="blog" property="blog" />
+        <result column="chat" property="chat" />
+        <result column="fee" property="fee" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, ex_id, name, slug, logo_url, website, twitter, blog, chat, fee
+    </sql>
+    <select id="selectLists" resultType="map">
+        select <include refid="Base_Column_List" /> from exchange
+    </select>
+
+</mapper>

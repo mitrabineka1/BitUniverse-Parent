@@ -1,0 +1,35 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="" underline="true"/>
+                            <#input id="exId" name="" underline="true"/>
+                            <#input id="name" name="" underline="true"/>
+                            <#input id="slug" name="简称" underline="true"/>
+                            <#input id="logoUrl" name="logo地址"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="website" name="网站" underline="true"/>
+                            <#input id="twitter" name="" underline="true"/>
+                            <#input id="blog" name="" underline="true"/>
+                            <#input id="chat" name="" underline="true"/>
+                            <#input id="fee" name="" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="ExchangeInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ExchangeInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/exchange/exchange/exchange_info.js"></script>
+@}
