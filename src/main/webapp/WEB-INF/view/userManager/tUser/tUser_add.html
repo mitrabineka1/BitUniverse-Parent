@@ -1,0 +1,33 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="phone" name="用户账号" underline="true"/>
+                            <#input id="userPassword" name="用户密码" underline="true"/>
+                            <#input id="secretKey" name="密钥" underline="true"/>
+                            <#input id="token" name="token" underline="true"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="deviceInfo" name="设备信息" underline="true"/>
+                            <#input id="deviceType" name="设备类型 1安卓 2ios" underline="true"/>
+                            <#input id="deviceOs" name="操作系统" underline="true"/>
+                            <#input id="state" name="状态 0:有效 1:冻结 2:注销" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="TUserInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="TUserInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/userManager/tUser/tUser_info.js"></script>
+@}

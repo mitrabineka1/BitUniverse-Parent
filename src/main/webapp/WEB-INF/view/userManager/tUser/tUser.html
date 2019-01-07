@@ -1,0 +1,39 @@
+@layout("/common/_container.html"){
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>用户管理管理</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="row row-lg">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <#NameCon id="phone" name="手机号" />
+                            </div>
+                            <div class="col-sm-3">
+                                <#button name="搜索" icon="fa-search" clickFun="TUser.search()"/>
+                                <#button name="重置" icon="fa-trash" clickFun="TUser.resetSearch()" space="true"/>
+                            </div>
+                        </div>
+                        <div class="hidden-xs" id="TUserTableToolbar" role="group">
+                            @if(shiro.hasPermission("/tUser/add")){
+                                <#button name="添加" icon="fa-plus" clickFun="TUser.openAddTUser()"/>
+                            @}
+                            @if(shiro.hasPermission("/tUser/update")){
+                                <#button name="修改" icon="fa-edit" clickFun="TUser.openTUserDetail()" space="true"/>
+                            @}
+                            @if(shiro.hasPermission("/tUser/delete")){
+                                <#button name="删除" icon="fa-remove" clickFun="TUser.delete()" space="true"/>
+                            @}
+                        </div>
+                        <#table id="TUserTable"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/userManager/tUser/tUser.js"></script>
+@}

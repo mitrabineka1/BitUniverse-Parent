@@ -44,6 +44,7 @@ spring:
     username: root
     password: root
     filters: wall,mergeStat
+    db-name: bituniverse
 
 #多数据源情况的配置
 guns:
