@@ -104,6 +104,6 @@ Record.resetSearch = function () {
 $(function () {
     var defaultColunms = Record.initColumn();
     var table = new BSTable(Record.id, "/record/list", defaultColunms);
-    table.setPaginationType("client");
+    table.setPaginationType("server");
     Record.table = table.init();
 });

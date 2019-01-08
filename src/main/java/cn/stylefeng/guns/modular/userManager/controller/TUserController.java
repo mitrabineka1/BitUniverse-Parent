@@ -1,8 +1,13 @@
 package cn.stylefeng.guns.modular.userManager.controller;
 
+import cn.stylefeng.guns.core.common.constant.factory.PageFactory;
+import cn.stylefeng.guns.core.common.page.PageInfoBT;
+import cn.stylefeng.guns.modular.system.model.OkexDealRecord;
 import cn.stylefeng.roses.core.base.controller.BaseController;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.mapper.Wrapper;
+import com.baomidou.mybatisplus.plugins.Page;
+import org.abego.treelayout.internal.util.Contract;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -62,9 +67,11 @@ public class TUserController extends BaseController {
     @RequestMapping(value = "/list")
     @ResponseBody
     public Object list(String phone) {
+        Page<TUser> page = new PageFactory<TUser>().defaultPage();
         EntityWrapper<TUser> tUserEntityWrapper = new EntityWrapper<>();
         Wrapper<TUser> wrapper = tUserEntityWrapper.like("phone", phone);
-        return tUserService.selectList(wrapper);
+        page = tUserService.selectPage(page, wrapper);
+        return new PageInfoBT<>(page);
     }
 
     /**

@@ -48,6 +48,9 @@ public class UserFactory {
             if (ToolUtil.isNotEmpty(newUser.getName())) {
                 oldUser.setName(newUser.getName());
             }
+            if (ToolUtil.isNotEmpty(newUser.getAccount())) {
+                oldUser.setAccount(newUser.getAccount());
+            }
             if (ToolUtil.isNotEmpty(newUser.getBirthday())) {
                 oldUser.setBirthday(newUser.getBirthday());
             }

@@ -1,7 +1,10 @@
 package cn.stylefeng.guns.modular.order.controller;
 
+import cn.stylefeng.guns.core.common.constant.factory.PageFactory;
+import cn.stylefeng.guns.core.common.page.PageInfoBT;
 import cn.stylefeng.guns.modular.system.warpper.OkexDealRecordWarpper;
 import cn.stylefeng.roses.core.base.controller.BaseController;
+import com.baomidou.mybatisplus.plugins.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -64,8 +67,10 @@ public class OkexDealRecordController extends BaseController {
     @RequestMapping(value = "/list")
     @ResponseBody
     public Object list(String coin) {
-        List<Map<String, Object>> list = okexDealRecordService.selectLists(coin);
-        return new OkexDealRecordWarpper(list).wrap();
+        Page<OkexDealRecord> page = new PageFactory<OkexDealRecord>().defaultPage();
+        List<Map<String, Object>> list = okexDealRecordService.selectLists(coin, page);
+        page.setRecords(new OkexDealRecordWarpper(list).wrap());
+        return new PageInfoBT<>(page);
     }
 
     /**

@@ -16,11 +16,12 @@
     <sql id="Base_Column_List">
         id, coin_id, price, volume, type, time
     </sql>
-    <select id="selectLists" resultType="map">
+    <select id="selectLists" resultType="map" parameterType="com.baomidou.mybatisplus.plugins.Page">
         select <include refid="Base_Column_List" /> from okex_deal_record WHERE 1=1
         <if test="coin != null and coin != ''">
             and (coin_id = #{coin})
         </if>
+        order by id desc
     </select>
 
 </mapper>

@@ -1,8 +1,11 @@
 package cn.stylefeng.guns.modular.sms.controller;
 
+import cn.stylefeng.guns.core.common.constant.factory.PageFactory;
+import cn.stylefeng.guns.core.common.page.PageInfoBT;
 import cn.stylefeng.roses.core.base.controller.BaseController;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.mapper.Wrapper;
+import com.baomidou.mybatisplus.plugins.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -62,9 +65,11 @@ public class RecordController extends BaseController {
     @RequestMapping(value = "/list")
     @ResponseBody
     public Object list(String phone) {
+        Page<Record> page = new PageFactory<Record>().defaultPage();
         EntityWrapper<Record> recordEntityWrapper = new EntityWrapper<>();
         Wrapper<Record> wrapper = recordEntityWrapper.like("phone", phone);
-        return recordService.selectList(wrapper);
+        page = recordService.selectPage(page, wrapper);
+        return new PageInfoBT<>(page);
     }
 
     /**

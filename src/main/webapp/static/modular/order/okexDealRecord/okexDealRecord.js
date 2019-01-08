@@ -101,6 +101,6 @@ OkexDealRecord.search = function () {
 $(function () {
     var defaultColunms = OkexDealRecord.initColumn();
     var table = new BSTable(OkexDealRecord.id, "/okexDealRecord/list", defaultColunms);
-    table.setPaginationType("client");
+    table.setPaginationType("server");
     OkexDealRecord.table = table.init();
 });

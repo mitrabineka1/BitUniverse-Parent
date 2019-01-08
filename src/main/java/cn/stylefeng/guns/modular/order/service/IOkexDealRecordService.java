@@ -1,6 +1,7 @@
 package cn.stylefeng.guns.modular.order.service;
 
 import cn.stylefeng.guns.modular.system.model.OkexDealRecord;
+import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.IService;
 
 import java.util.List;
@@ -16,5 +17,5 @@ import java.util.Map;
  */
 public interface IOkexDealRecordService extends IService<OkexDealRecord> {
 
-    List<Map<String, Object>> selectLists(String coin);
+    List<Map<String, Object>> selectLists(String coin, Page<OkexDealRecord> page);
 }

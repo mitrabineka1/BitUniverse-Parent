@@ -107,6 +107,6 @@ TUser.resetSearch = function () {
 $(function () {
     var defaultColunms = TUser.initColumn();
     var table = new BSTable(TUser.id, "/tUser/list", defaultColunms);
-    table.setPaginationType("client");
+    table.setPaginationType("server");
     TUser.table = table.init();
 });
