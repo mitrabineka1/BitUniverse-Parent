@@ -92,13 +92,17 @@ SuperOrder.delete = function () {
  */
 SuperOrder.search = function () {
     var queryData = {};
-    queryData['condition'] = $("#condition").val();
+    queryData['coin'] = $("#coin").val();
     SuperOrder.table.refresh({query: queryData});
+};
+SuperOrder.resetSearch = function () {
+    $("#coin").val("");
+    SuperOrder.search();
 };
 
 $(function () {
     var defaultColunms = SuperOrder.initColumn();
     var table = new BSTable(SuperOrder.id, "/superOrder/list", defaultColunms);
-    table.setPaginationType("client");
+    table.setPaginationType("server");
     SuperOrder.table = table.init();
 });

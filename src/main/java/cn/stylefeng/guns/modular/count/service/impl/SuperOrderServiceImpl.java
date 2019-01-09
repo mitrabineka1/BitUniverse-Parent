@@ -1,8 +1,10 @@
 package cn.stylefeng.guns.modular.count.service.impl;
 
+import cn.stylefeng.guns.core.common.util.DictUtils;
 import cn.stylefeng.guns.modular.system.model.SuperOrder;
 import cn.stylefeng.guns.modular.system.dao.SuperOrderMapper;
 import cn.stylefeng.guns.modular.count.service.ISuperOrderService;
+import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,7 +26,7 @@ public class SuperOrderServiceImpl extends ServiceImpl<SuperOrderMapper, SuperOr
     @Autowired
     private SuperOrderMapper superOrderMapper;
     @Override
-    public List<Map<String, Object>> selectLists() {
-        return superOrderMapper.selectLists();
+    public List<Map<String, Object>> selectLists(String coin, Page<SuperOrder> page) {
+        return superOrderMapper.selectLists(coin, page);
     }
 }

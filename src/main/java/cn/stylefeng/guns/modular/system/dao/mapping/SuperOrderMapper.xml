@@ -18,8 +18,12 @@
     <sql id="Base_Column_List">
         id, coin, exchange_id, price, size, side, total, time
     </sql>
-    <select id="selectLists" resultType="map">
-        select <include refid="Base_Column_List" /> from super_order
+    <select id="selectLists" resultType="map" parameterType="com.baomidou.mybatisplus.plugins.Page">
+        select <include refid="Base_Column_List" /> from super_order where 1=1
+        <if test="coin != null and coin != ''">
+            and (coin = #{coin})
+        </if>
+        order by id desc
     </select>
 
 </mapper>

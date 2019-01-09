@@ -1,7 +1,12 @@
 package cn.stylefeng.guns.modular.count.controller;
 
+import cn.stylefeng.guns.core.common.constant.factory.PageFactory;
+import cn.stylefeng.guns.core.common.page.PageInfoBT;
+import cn.stylefeng.guns.modular.system.model.TUser;
+import cn.stylefeng.guns.modular.system.warpper.OkexDealRecordWarpper;
 import cn.stylefeng.guns.modular.system.warpper.SuperOrderWarpper;
 import cn.stylefeng.roses.core.base.controller.BaseController;
+import com.baomidou.mybatisplus.plugins.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -63,9 +68,11 @@ public class SuperOrderController extends BaseController {
      */
     @RequestMapping(value = "/list")
     @ResponseBody
-    public Object list(String condition) {
-        List<Map<String, Object>> list = superOrderService.selectLists();
-        return new SuperOrderWarpper(list).wrap();
+    public Object list(String coin) {
+        Page<SuperOrder> page = new PageFactory<SuperOrder>().defaultPage();
+        List<Map<String, Object>> list = superOrderService.selectLists(coin, page);
+        page.setRecords(new SuperOrderWarpper(list).wrap());
+        return new PageInfoBT<>(page);
     }
 
     /**
