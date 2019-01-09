@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -27,7 +28,7 @@ public class CountServiceImpl implements CountService {
         List<Map> list = RedisUtil.searchList(redis, jedisKey, 0, 200, Map.class);
         if(list != null && list.size() > 0) {
             SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd");
-
+            SimpleDateFormat df2 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
             BigDecimal open;
             BigDecimal high;
             BigDecimal low;
@@ -38,7 +39,8 @@ public class CountServiceImpl implements CountService {
                 List<Object> objects = new ArrayList<>();
                 time = map.get("time").toString();
                 try {
-                    time = df.format(df.parse(time));
+                    Date date = df2.parse(time);
+                    time = df.format(date);
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
