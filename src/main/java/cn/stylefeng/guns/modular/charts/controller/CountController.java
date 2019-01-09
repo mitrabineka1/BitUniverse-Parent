@@ -2,6 +2,7 @@ package cn.stylefeng.guns.modular.charts.controller;
 
 import cn.stylefeng.guns.modular.count.service.CountService;
 import cn.stylefeng.roses.core.base.controller.BaseController;
+import com.alibaba.fastjson.JSON;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -38,8 +39,9 @@ public class CountController extends BaseController {
      */
     @ResponseBody
     @RequestMapping("kline")
-    public List<List<Object>> init(Integer coinId, Integer exchangeId, Integer gear) {
-        return countService.getKline(coinId, exchangeId, gear);
+    public String init(Integer coinId, Integer exchangeId, Integer gear) {
+        List<List<Object>> list = countService.getKline(coinId, exchangeId, gear);
+        return JSON.toJSONString(list);
     }
 
 }
