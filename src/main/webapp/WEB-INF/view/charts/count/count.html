@@ -25,9 +25,6 @@
         text : '正在加载数据。。。。'
     });
 
-    var names = []; //类别数组（实际用来盛放X轴坐标值）
-    var nums = []; //销量数组（实际用来盛放Y坐标值）
-
     //加载数据
     jQuery.ajax({
         url : "count/kline",
@@ -38,7 +35,6 @@
         success : function(jsons) {
 
             if (jsons) {
-                alert(jsons);
                 myChart.hideLoading(); //隐藏动画
                 // 数据意义：开盘(open)，收盘(close)，最低(lowest)，最高(highest)
                 var data0 = splitData(jsons);
@@ -47,10 +43,11 @@
                 function splitData(rawData) {
                     var categoryData = [];
                     var values = [];
-
+                    rawData= JSON.parse(rawData);
+                    console.info(rawData);
                     for (var i = 0; i < rawData.length; i++) {
                         //splice 返回每组数组中被删除的第一项，即返回数组中被删除的日期
-                        //alert(rawData[i].splice(0, 1)[0]);
+                        //console.info(rawData[i].splice(0, 1)[0]);
                         //categoryData  日期  把返回的日期放到categoryData[]数组中
                         categoryData.push(rawData[i].splice(0, 1)[0]);
                         //alert(categoryData);
@@ -88,7 +85,7 @@
 
                 option = {
                     title: {    //标题
-                        text: '上证指数',
+                        text: '价格走势图',
                         left: 0
                     },
                     tooltip: {  //提示框
@@ -273,13 +270,12 @@
 
                     ]
                 };
+                myChart.setOption(option);
             }
         },
         error : function() {
             alert("数据加载失败！请检查数据链接是否正确");
         }
     });
-    // 初次加载图表(无数据)
-//    myChart.setOption(option);
 </script>
 @}
