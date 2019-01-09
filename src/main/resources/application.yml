@@ -28,6 +28,10 @@ spring:
     multipart:
       max-request-size: 100MB
       max-file-size: 100MB
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
 
 mybatis-plus:
   typeAliasesPackage: cn.zh.bituniverse.modular.system.model

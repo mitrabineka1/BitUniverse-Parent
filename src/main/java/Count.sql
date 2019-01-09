@@ -1,0 +1,1 @@
+INSERT INTO `sys_menu` (`id`, `code`, `pcode`, `pcodes`, `name`, `icon`, `url`, `num`, `levels`, `ismenu`, `tips`, `status`, `isopen`) VALUES ('1082838136781258754', 'count', '6', '[0],[6],', '数据图表', '', '/count', '99', '2', '1', NULL, '1', '0');
