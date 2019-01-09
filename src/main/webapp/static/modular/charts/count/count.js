@@ -358,7 +358,7 @@ function init(c2, gear) {
 }
 
 function detail(){
-    var myChart = echarts.init(document.getElementById('main'));
+    var myChart = echarts.init(document.getElementById('main2'));
     var builderJson = {
         "all": 119,
         "charts": {
