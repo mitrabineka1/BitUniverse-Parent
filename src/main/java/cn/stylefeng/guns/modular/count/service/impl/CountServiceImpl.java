@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -24,6 +26,8 @@ public class CountServiceImpl implements CountService {
         String jedisKey = String.format(RedisKey.KLINE, exchangeId, gear, coinId, USDT);
         List<Map> list = RedisUtil.searchList(redis, jedisKey, 0, 200, Map.class);
         if(list != null && list.size() > 0) {
+            SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+
             BigDecimal open;
             BigDecimal high;
             BigDecimal low;
@@ -33,6 +37,11 @@ public class CountServiceImpl implements CountService {
             for (Map map : list) {
                 List<Object> objects = new ArrayList<>();
                 time = map.get("time").toString();
+                try {
+                    time = df.format(df.parse(time));
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
                 open = new BigDecimal(map.get("open").toString());
                 high = new BigDecimal(map.get("high").toString());
                 low = new BigDecimal(map.get("low").toString());
