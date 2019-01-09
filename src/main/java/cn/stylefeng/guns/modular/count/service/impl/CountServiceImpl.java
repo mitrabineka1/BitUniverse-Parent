@@ -23,24 +23,24 @@ public class CountServiceImpl implements CountService {
         String jedisKey = String.format(RedisKey.KLINE, exchangeId, gear, coinId, USDT);
         List<Map> list = RedisUtil.searchList(redis, jedisKey, 0, 200, Map.class);
         if(list != null && list.size() > 0) {
-            String open;
-            String high;
-            String low;
-            String close;
+            Object open;
+            Object high;
+            Object low;
+            Object close;
             String time;
             List<List<Object>> resultList = new ArrayList<>();
             for (Map map : list) {
                 List<Object> objects = new ArrayList<>();
-                open = map.get("open").toString();
-                high = map.get("high").toString();
-                low = map.get("low").toString();
-                close = map.get("close").toString();
                 time = map.get("time").toString();
-                objects.add(open);
-                objects.add(high);
-                objects.add(low);
-                objects.add(close);
+                open = map.get("open");
+                high = map.get("high");
+                low = map.get("low");
+                close = map.get("close");
                 objects.add(time);
+                objects.add(open);
+                objects.add(close);
+                objects.add(low);
+                objects.add(high);
                 resultList.add(objects);
             }
             return resultList;
