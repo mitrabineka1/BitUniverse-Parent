@@ -7,6 +7,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -23,19 +24,19 @@ public class CountServiceImpl implements CountService {
         String jedisKey = String.format(RedisKey.KLINE, exchangeId, gear, coinId, USDT);
         List<Map> list = RedisUtil.searchList(redis, jedisKey, 0, 200, Map.class);
         if(list != null && list.size() > 0) {
-            Object open;
-            Object high;
-            Object low;
-            Object close;
+            BigDecimal open;
+            BigDecimal high;
+            BigDecimal low;
+            BigDecimal close;
             String time;
             List<List<Object>> resultList = new ArrayList<>();
             for (Map map : list) {
                 List<Object> objects = new ArrayList<>();
                 time = map.get("time").toString();
-                open = map.get("open");
-                high = map.get("high");
-                low = map.get("low");
-                close = map.get("close");
+                open = new BigDecimal(map.get("open").toString());
+                high = new BigDecimal(map.get("high").toString());
+                low = new BigDecimal(map.get("low").toString());
+                close = new BigDecimal(map.get("close").toString());
                 objects.add(time);
                 objects.add(open);
                 objects.add(close);
