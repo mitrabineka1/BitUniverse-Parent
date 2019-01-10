@@ -66,7 +66,7 @@ public class CountServiceImpl implements CountService {
         typeList.add(0);
         typeList.add(1);
         for(Integer type : typeList){
-            resultMap.put(type.toString(), getDis(coinId, type));
+            resultMap.put(type == 0 ? "buy" : "sale", getDis(coinId, type));
         }
         return resultMap;
     }
@@ -78,7 +78,7 @@ public class CountServiceImpl implements CountService {
         actionList.add("small");
         Map<String, BigDecimal> m = new HashMap<>();
         for(String action : actionList){
-            String key = String.format(RedisKey.COIN_FUND_DISTRIBUTION_DETAILS, EnumExchange.OKEX.getExchangId(), coin, action, type);
+            String key = String.format(RedisKey.COIN_FUND_DISTRIBUTION_DETAILS, EnumExchange.OKEX.getExchangId(), EnumCoin.getName(coin), action, type);
             String amount = RedisUtil.searchString(redis, key);
             m.put(action, new BigDecimal(amount));
         }
