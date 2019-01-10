@@ -10,6 +10,7 @@ import cn.stylefeng.roses.core.util.SpringContextHolder;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,4 +27,10 @@ import java.util.Map;
 @Service
 public class ManagerServiceImpl extends ServiceImpl<ManagerMapper, Manager> implements IManagerService {
 
+    @Autowired
+    private ManagerMapper managerMapper;
+    @Override
+    public List<Map<String, Object>> selectByAll(Integer managerId) {
+        return managerMapper.selectByAll(managerId);
+    }
 }

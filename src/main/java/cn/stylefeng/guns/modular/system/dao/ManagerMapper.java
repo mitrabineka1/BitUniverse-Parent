@@ -18,4 +18,5 @@ import java.util.Map;
 public interface ManagerMapper extends BaseMapper<Manager> {
 
 
+    List<Map<String, Object>> selectByAll(@Param("managerId") Integer managerId);
 }

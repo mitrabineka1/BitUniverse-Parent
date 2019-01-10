@@ -52,7 +52,7 @@ Manager.openAddManager = function () {
     var index = layer.open({
         type: 2,
         title: '添加币种动态信息',
-        area: ['1600px', '700px'], //宽高
+        area: ['800px', '700px'], //宽高
         fix: false, //不固定
         maxmin: true,
         content: Feng.ctxPath + '/manager/manager_add'
@@ -68,7 +68,7 @@ Manager.openManagerDetail = function () {
         var index = layer.open({
             type: 2,
             title: '币种动态信息详情',
-            area: ['800px', '420px'], //宽高
+            area: ['800px', '700px'], //宽高
             fix: false, //不固定
             maxmin: true,
             content: Feng.ctxPath + '/manager/manager_update/' + Manager.seItem.id

@@ -24,6 +24,11 @@
     <sql id="Base_Column_List">
         id, name, symbol, website_slug, logo_url, url_transaction, url_address_info, circulating_supply, market_cap, volume_24h, max_supply, markey_ratio, turnover_rate, circulation_rate, create_time, update_time
     </sql>
-
+    <select id="selectByAll" resultType="java.util.Map">
+        SELECT cm.*, ci.info,ci.edit_img_url,ci.plate,ci.edit_name,ci.edit_info,ci.team_info,ci.github,ci.reddit,ci.twitter,ci.facebook,ci.website,ci.white_paper,ci.explorer FROM coin_manager cm LEFT JOIN coin_info ci ON cm.id = ci.coin_id 1=1
+        <if test="c1 != null and c1 != ''">
+            and (c1 = #{c1})
+        </if>
+    </select>
 
 </mapper>

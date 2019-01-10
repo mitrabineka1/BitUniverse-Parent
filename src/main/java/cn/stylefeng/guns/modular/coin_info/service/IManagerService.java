@@ -17,4 +17,5 @@ import java.util.Map;
 public interface IManagerService extends IService<Manager> {
 
 
+    List<Map<String, Object>> selectByAll(Integer managerId);
 }

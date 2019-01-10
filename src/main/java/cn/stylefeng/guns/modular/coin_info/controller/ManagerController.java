@@ -2,6 +2,7 @@ package cn.stylefeng.guns.modular.coin_info.controller;
 
 import cn.stylefeng.guns.modular.coin_info.service.IInfoService;
 import cn.stylefeng.guns.modular.system.model.Info;
+import cn.stylefeng.guns.modular.system.warpper.CoinManagerWarpper;
 import cn.stylefeng.roses.core.base.controller.BaseController;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.mapper.Wrapper;
@@ -59,7 +60,9 @@ public class ManagerController extends BaseController {
     @RequestMapping("/manager_update/{managerId}")
     public String managerUpdate(@PathVariable Integer managerId, Model model) {
         Manager manager = managerService.selectById(managerId);
+        Info info = infoService.selectById(managerId);
         model.addAttribute("item",manager);
+        model.addAttribute("info",info);
         LogObjectHolder.me().set(manager);
         return PREFIX + "manager_edit.html";
     }
@@ -103,8 +106,9 @@ public class ManagerController extends BaseController {
      */
     @RequestMapping(value = "/update")
     @ResponseBody
-    public Object update(Manager manager) {
+    public Object update(Manager manager, Info info) {
         managerService.updateById(manager);
+        infoService.updateById(info);
         return SUCCESS_TIP;
     }
 
@@ -114,6 +118,7 @@ public class ManagerController extends BaseController {
     @RequestMapping(value = "/detail/{managerId}")
     @ResponseBody
     public Object detail(@PathVariable("managerId") Integer managerId) {
-        return managerService.selectById(managerId);
+        List<Map<String, Object>> list = managerService.selectByAll(managerId);
+        return new CoinManagerWarpper(list).wrap();
     }
 }
