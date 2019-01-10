@@ -1,5 +1,7 @@
 package cn.stylefeng.guns.modular.count.service.impl;
 
+import cn.stylefeng.guns.core.util.EnumCoin;
+import cn.stylefeng.guns.core.util.EnumExchange;
 import cn.stylefeng.guns.core.util.RedisKey;
 import cn.stylefeng.guns.core.util.RedisUtil;
 import cn.stylefeng.guns.modular.count.service.CountService;
@@ -10,10 +12,7 @@ import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class CountServiceImpl implements CountService {
@@ -58,5 +57,31 @@ public class CountServiceImpl implements CountService {
             return resultList;
         }
         return null;
+    }
+
+    @Override
+    public Map<String, Map<String, BigDecimal>> fundDis(Integer coinId) {
+        Map<String, Map<String, BigDecimal>> resultMap = new HashMap<>();
+        List<Integer> typeList = new ArrayList<>();
+        typeList.add(0);
+        typeList.add(1);
+        for(Integer type : typeList){
+            resultMap.put(type.toString(), getDis(coinId, type));
+        }
+        return resultMap;
+    }
+
+    private Map<String, BigDecimal> getDis(Integer coin, Integer type){
+        List<String> actionList = new ArrayList<>();
+        actionList.add("big");
+        actionList.add("mid");
+        actionList.add("small");
+        Map<String, BigDecimal> m = new HashMap<>();
+        for(String action : actionList){
+            String key = String.format(RedisKey.COIN_FUND_DISTRIBUTION_DETAILS, EnumExchange.OKEX.getExchangId(), coin, action, type);
+            String amount = RedisUtil.searchString(redis, key);
+            m.put(action, new BigDecimal(amount));
+        }
+        return m;
     }
 }

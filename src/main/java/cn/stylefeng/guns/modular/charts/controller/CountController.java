@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 数据图表控制器
@@ -42,6 +44,15 @@ public class CountController extends BaseController {
     public String init(Integer coinId, Integer exchangeId, Integer gear) {
         List<List<Object>> list = countService.getKline(coinId, exchangeId, gear);
         return JSON.toJSONString(list);
+    }
+    /**
+     * 获取资金分布数据
+     */
+    @ResponseBody
+    @RequestMapping("fundDIs")
+    public String fundDis(Integer coinId) {
+        Map<String, Map<String, BigDecimal>> map = countService.fundDis(coinId);
+        return JSON.toJSONString(map);
     }
 
 }
