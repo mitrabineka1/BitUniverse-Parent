@@ -15,7 +15,7 @@ UsingDocuments.initColumn = function () {
     return [
         {field: 'selectItem', radio: true},
             {title: '编号', field: 'id', visible: true, align: 'center', valign: 'middle'},
-            {title: '币种名称', field: 'coin', visible: true, align: 'center', valign: 'middle'},
+            {title: '交易所', field: 'coin', visible: true, align: 'center', valign: 'middle'},
             {title: '内容', field: 'content', visible: true, align: 'center', valign: 'middle'}
     ];
 };

@@ -93,9 +93,10 @@ UsingDocumentsInfoDlg.editSubmit = function() {
 $(function() {
 
 });
-function sub() {
-   var coinId = document.getElementById('coinId').value;
-   var content = editor.txt.text();
+
+UsingDocumentsInfoDlg.sub = function () {
+    var coinId = document.getElementById('coinId').value;
+   var content = editor.txt.html();
     $.ajax({
         type : "post",
         url : Feng.ctxPath + "/usingDocuments/add",

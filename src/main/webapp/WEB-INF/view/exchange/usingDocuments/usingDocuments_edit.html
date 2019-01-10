@@ -4,13 +4,11 @@
         <div class="form-horizontal">
 
             <div class="row">
-                <div class="col-sm-6 b-r">
-                            <#input id="id" name="" value="${item.id}" underline="true"/>
-                            <#input id="coinId" name="币种名称" value="${item.coinId}" />
-                </div>
-
-                <div class="col-sm-6">
-                            <#input id="content" name="内容" value="${item.content}" />
+                <div class="col-sm-12 b-r">
+                            <#input id="id" name="交易所" value="${item.id}" underline="true"/>
+                    <div id="content">
+                        <p>${item.content}</p>
+                    </div>
                 </div>
             </div>
 
@@ -24,5 +22,12 @@
 
     </div>
 </div>
+<script src="${ctxPath}/static/js/plugins/wangEditor/wangEditor.js"></script>
 <script src="${ctxPath}/static/modular/exchange/usingDocuments/usingDocuments_info.js"></script>
+<script type="text/javascript">
+    var E = window.wangEditor
+    var editor = new E('#content')
+    editor.customConfig.uploadImgShowBase64 = true;
+    editor.create()
+</script>
 @}
