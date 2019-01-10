@@ -377,7 +377,7 @@ function detail(c2) {
                 jsons = JSON.parse(jsons);
                 console.info(jsons);
                 var builderJson = {
-                    "all": 5000000000,
+                    "all": 7000000000,
                     "charts": jsons.buy,
                     "components": jsons.sale,
                     "ie": 9743
@@ -408,19 +408,19 @@ function detail(c2) {
                     },
                     tooltip: {},
                     title: [{
-                        text: '在线构建',
+                        text: '资金分布（红色买入，黑色卖出）',
                         subtext: '总计 ' + builderJson.all,
                         x: '25%',
                         textAlign: 'center'
                     }, {
-                        text: '各版本下载',
+                        text: '买入',
                         subtext: '总计 ' + Object.keys(downloadJson).reduce(function (all, key) {
                             return all + downloadJson[key];
                         }, 0),
                         x: '75%',
                         textAlign: 'center'
                     }, {
-                        text: '主题下载',
+                        text: '卖出',
                         subtext: '总计 ' + Object.keys(themeJson).reduce(function (all, key) {
                             return all + themeJson[key];
                         }, 0),

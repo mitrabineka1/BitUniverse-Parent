@@ -80,7 +80,12 @@ public class CountServiceImpl implements CountService {
         for(String action : actionList){
             String key = String.format(RedisKey.COIN_FUND_DISTRIBUTION_DETAILS, EnumExchange.OKEX.getExchangId(), EnumCoin.getName(coin), action, type);
             String amount = RedisUtil.searchString(redis, key);
-            m.put(action, new BigDecimal(amount));
+            switch (action){
+                case "big" : m.put("大单", new BigDecimal(amount));break;
+                case "mid" : m.put("中单", new BigDecimal(amount));break;
+                case "small" : m.put("小单", new BigDecimal(amount));break;
+            }
+
         }
         return m;
     }
