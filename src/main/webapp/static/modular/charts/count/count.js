@@ -365,7 +365,7 @@ function detail(c2) {
 
     //加载数据
     jQuery.ajax({
-        url: "count/fundDIs",
+        url: "funds/fundDIs",
         type: 'get',
         data: {coinId: c2},
         datatype: 'json',

@@ -1,0 +1,1 @@
+INSERT INTO `sys_menu` (`id`, `code`, `pcode`, `pcodes`, `name`, `icon`, `url`, `num`, `levels`, `ismenu`, `tips`, `status`, `isopen`) VALUES ('1083208654118133762', 'funds', '6', '[0],[6],', '资产分布图表', '', '/funds', '99', '2', '1', NULL, '1', '0');

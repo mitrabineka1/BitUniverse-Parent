@@ -1,0 +1,27 @@
+@layout("/common/_container.html"){
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>资产分布图表管理</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="row row-lg">
+                    <div class="col-sm-12">
+                        <div class="col-sm-3"  align="center">
+                            <a onclick="detail(2)">BTC资金分布</a>
+                            <a onclick="detail(3)">ETH资金分布</a>
+                        </div>
+                        <div align="center">
+                            <div id="main" style="width: 1000px;height:700px;margin-top: 30px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/count/funds/funds.js"></script>
+<script src="${ctxPath}/static/modular/charts/count/count.js"></script>
+<script src="${ctxPath}/static/js/echarts.min.js"></script>
+@}
