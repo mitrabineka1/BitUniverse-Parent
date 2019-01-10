@@ -115,7 +115,7 @@ function detail(c2) {
                 myChart.hideLoading(); //隐藏动画
                 jsons = JSON.parse(jsons);
                 console.info(jsons);
-                /*var builderJson = {
+                var builderJson = {
                     "all": 7000000000,
                     "charts": jsons.buy,
                     "components": jsons.sale,
@@ -124,60 +124,8 @@ function detail(c2) {
 
                 var downloadJson = jsons.buy;
 
-                var themeJson = jsons.sale;*/
-                var builderJson = {
-                    "all": 119,
-                    "charts": {
-                        "软件开发":27,
-                        "技术工程师":22,
-                        "其他":22,
-                        "教师":21,
-                        "JAVA":12,
-                        "工程师":4,
-                        "Android":2,
-                        "后端开发":2,
-                        "前端开发":2,
-                        "数据库开发":2,
-                        ".net":1,
-                        "算法":1,
-                        "游戏策划":1,
-                        "运营":1
-                    },
-                    "components": {
-                        "教师":32,
-                        "软件开发":21,
-                        "其他":16,
-                        "测试":15,
-                        "技术工程师":14,
-                        "产品":7,
-                        "安卓":2,
-                        "JAVA":2,
-                        "工程师":2,
-                        "数据分析":2,
-                        "硬件工程师":2,
-                        "VR":1,
-                        "后端开发":1,
-                        "运营":1
+                var themeJson = jsons.sale;
 
-                    },
-                    "ie": 9743
-                };
-
-                var downloadJson = {
-                    "echarts.min.js": 17365,
-                    "echarts.simple.min.js": 4079,
-                    "echarts.common.min.js": 6929,
-                    "echarts.js": 14890
-                };
-
-                var themeJson = {
-                    "dark.js": 1594,
-                    "infographic.js": 925,
-                    "shine.js": 1608,
-                    "roma.js": 721,
-                    "macarons.js": 2179,
-                    "vintage.js": 1982
-                };
 
                 var waterMarkText = '';
 
