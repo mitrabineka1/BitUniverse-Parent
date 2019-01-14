@@ -76,6 +76,9 @@ public class UsingDocumentsController extends BaseController {
     @RequestMapping(value = "/add")
     @ResponseBody
     public Object add(UsingDocuments usingDocuments) {
+        String content = usingDocuments.getContent();
+        content = content.replaceAll("& ", "&");
+        usingDocuments.setContent(content);
         usingDocumentsService.insert(usingDocuments);
         return SUCCESS_TIP;
     }
@@ -96,6 +99,9 @@ public class UsingDocumentsController extends BaseController {
     @RequestMapping(value = "/update")
     @ResponseBody
     public Object update(UsingDocuments usingDocuments) {
+        String content = usingDocuments.getContent();
+        content = content.replaceAll("& ", "&");
+        usingDocuments.setContent(content);
         usingDocumentsService.updateById(usingDocuments);
         return SUCCESS_TIP;
     }
