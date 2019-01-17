@@ -16,6 +16,7 @@ OkexDealRecord.initColumn = function () {
         {field: 'selectItem', radio: true},
             {title: 'okDeal', field: 'id', visible: true, align: 'center', valign: 'middle'},
             {title: '币种名称', field: 'coin', visible: true, align: 'center', valign: 'middle'},
+            {title: '交易所ID', field: 'eid', visible: true, align: 'center', valign: 'middle'},
             {title: '价格', field: 'price', visible: true, align: 'center', valign: 'middle'},
             {title: '数量', field: 'volume', visible: true, align: 'center', valign: 'middle'},
             {title: '交易类型', field: 'orderType', visible: true, align: 'center', valign: 'middle'},

@@ -24,6 +24,8 @@ public class OkexDealRecord extends Model<OkexDealRecord> {
     private Integer id;
     @TableField("coin_id")
     private Integer coinId;
+    @TableField("exchange_id")
+    private Integer exchangeId;
     private String price;
     private String volume;
     /**
@@ -32,6 +34,13 @@ public class OkexDealRecord extends Model<OkexDealRecord> {
     private Integer type;
     private String time;
 
+    public Integer getExchangeId() {
+        return exchangeId;
+    }
+
+    public void setExchangeId(Integer exchangeId) {
+        this.exchangeId = exchangeId;
+    }
 
     public Integer getId() {
         return id;

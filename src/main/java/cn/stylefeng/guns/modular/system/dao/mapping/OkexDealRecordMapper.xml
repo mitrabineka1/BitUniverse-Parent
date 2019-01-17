@@ -9,12 +9,13 @@
         <result column="price" property="price" />
         <result column="volume" property="volume" />
         <result column="type" property="type" />
+        <result column="exchange_id" property="exchangeId" />
         <result column="time" property="time" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, coin_id, price, volume, type, time
+        id, coin_id, exchange_id, price, volume, type, time
     </sql>
     <select id="selectLists" resultType="map" parameterType="com.baomidou.mybatisplus.plugins.Page">
         select <include refid="Base_Column_List" /> from okex_deal_record WHERE 1=1

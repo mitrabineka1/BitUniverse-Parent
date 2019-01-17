@@ -44,6 +44,7 @@ public class OkexDealRecordWarpper extends BaseControllerWrapper {
     @Override
     protected void wrapTheMap(Map<String, Object> map) {
         map.put("coin", ConstantFactory.me().getCoinName((Integer) map.get("coin_id")));
+        map.put("eid", ConstantFactory.me().getExchangeName((Integer) map.get("exchange_id")));
         map.put("orderType", ConstantFactory.me().getOrderTypeName((Integer) map.get("type")));
     }
 
