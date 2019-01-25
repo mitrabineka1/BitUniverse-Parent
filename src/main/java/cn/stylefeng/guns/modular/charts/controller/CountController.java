@@ -41,7 +41,7 @@ public class CountController extends BaseController {
      */
     @ResponseBody
     @RequestMapping("kline")
-    public String init(Integer coinId, Integer exchangeId, Integer gear) {
+    public String init(Integer exchangeId, Integer coinId, Integer gear) {
         List<List<Object>> list = countService.getKline(coinId, exchangeId, gear);
         return JSON.toJSONString(list);
     }

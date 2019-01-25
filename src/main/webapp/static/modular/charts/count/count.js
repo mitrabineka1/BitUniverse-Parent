@@ -107,7 +107,7 @@ function init(exchangeId, c2, gear) {
     jQuery.ajax({
         url: "count/kline",
         type: 'get',
-        data: {coinId: c2, exchangeId: exchangeId, gear: gear},
+        data: {exchangeId: exchangeId, coinId: c2, gear: gear},
         datatype: 'json',
         async: true,
         success: function (jsons) {

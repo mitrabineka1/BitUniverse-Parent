@@ -27,7 +27,7 @@ public class CountServiceImpl implements CountService {
         List<Map> list = RedisUtil.searchList(redis, jedisKey, 0, 200, Map.class);
         if(list != null && list.size() > 0) {
             SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd");
-            SimpleDateFormat df2 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+            SimpleDateFormat df2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             BigDecimal open;
             BigDecimal high;
             BigDecimal low;
@@ -78,9 +78,9 @@ public class CountServiceImpl implements CountService {
         actionList.add("small");
         Map<String, BigDecimal> m = new HashMap<>();
         List<Integer> exchangeList = new ArrayList<>();
-        exchangeList.add(EnumExchange.OKEX.hashCode());
-        exchangeList.add(EnumExchange.HUOBI.hashCode());
-        exchangeList.add(EnumExchange.BINANCE.hashCode());
+        exchangeList.add(EnumExchange.OKEX.getExchangId());
+        exchangeList.add(EnumExchange.HUOBI.getExchangId());
+        exchangeList.add(EnumExchange.BINANCE.getExchangId());
         for(String action : actionList){
             for(Integer exchange : exchangeList) {
                 String exchangeName = EnumExchange.getName(exchange);
