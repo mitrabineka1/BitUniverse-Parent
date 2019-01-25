@@ -116,7 +116,7 @@ function detail(c2) {
                 jsons = JSON.parse(jsons);
                 console.info(jsons);
                 var builderJson = {
-                    "all": 7000000000,
+                    "all": 100000000000,
                     "charts": jsons.buy,
                     "components": jsons.sale,
                     "ie": 9743

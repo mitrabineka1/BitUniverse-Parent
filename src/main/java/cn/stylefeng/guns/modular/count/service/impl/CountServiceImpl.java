@@ -77,13 +77,26 @@ public class CountServiceImpl implements CountService {
         actionList.add("mid");
         actionList.add("small");
         Map<String, BigDecimal> m = new HashMap<>();
+        List<Integer> exchangeList = new ArrayList<>();
+        exchangeList.add(EnumExchange.OKEX.hashCode());
+        exchangeList.add(EnumExchange.HUOBI.hashCode());
+        exchangeList.add(EnumExchange.BINANCE.hashCode());
         for(String action : actionList){
-            String key = String.format(RedisKey.COIN_FUND_DISTRIBUTION_DETAILS, EnumExchange.OKEX.getExchangId(), EnumCoin.getName(coin), action, type);
-            String amount = RedisUtil.searchString(redis, key);
-            switch (action){
-                case "big" : m.put("大单", new BigDecimal(amount));break;
-                case "mid" : m.put("中单", new BigDecimal(amount));break;
-                case "small" : m.put("小单", new BigDecimal(amount));break;
+            for(Integer exchange : exchangeList) {
+                String exchangeName = EnumExchange.getName(exchange);
+                String key = String.format(RedisKey.COIN_FUND_DISTRIBUTION_DETAILS, exchange, EnumCoin.getName(coin), action, type);
+                String amount = RedisUtil.searchString(redis, key);
+                switch (action) {
+                    case "big":
+                        m.put(exchangeName + "大单", new BigDecimal(amount));
+                        break;
+                    case "mid":
+                        m.put(exchangeName +"中单", new BigDecimal(amount));
+                        break;
+                    case "small":
+                        m.put(exchangeName +"小单", new BigDecimal(amount));
+                        break;
+                }
             }
 
         }

@@ -24,4 +24,13 @@ public enum EnumExchange {
         return desc;
     }
 
+    public static String getName(Integer id){
+        for (EnumExchange s : EnumExchange.values()){
+            if(s.exchangId == id){
+                return s.getDesc();
+            }
+        }
+        return null;
+    }
+
 }

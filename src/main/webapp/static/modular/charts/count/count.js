@@ -97,7 +97,7 @@ $(function () {
 });
 
 
-function init(c2, gear) {
+function init(exchangeId, c2, gear) {
     var myChart = echarts.init(document.getElementById('main')); //渲染组件
     myChart.showLoading({ //加载动画
         text: '正在加载数据。。。。'
@@ -107,7 +107,7 @@ function init(c2, gear) {
     jQuery.ajax({
         url: "count/kline",
         type: 'get',
-        data: {coinId: c2, exchangeId: 1, gear: gear},
+        data: {coinId: c2, exchangeId: exchangeId, gear: gear},
         datatype: 'json',
         async: true,
         success: function (jsons) {
