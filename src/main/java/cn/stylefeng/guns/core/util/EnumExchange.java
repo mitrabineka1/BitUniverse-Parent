@@ -8,7 +8,8 @@ public enum EnumExchange {
     AVERAGE(0, "AVERAGE"),
     OKEX(1, "OKEX"),
     HUOBI(2, "HUOBI"),
-    BINANCE(3, "BINANCE");
+    BINANCE(3, "BINANCE"),
+    BW(4, "BW");
     private final int exchangId;
     private final String desc;
     EnumExchange(int exchangId, String desc){
