@@ -126,7 +126,6 @@ function detail(c2) {
 
                 var themeJson = jsons.sale;
 
-
                 var waterMarkText = '';
 
                 var canvas = document.createElement('canvas');
