@@ -82,7 +82,7 @@ public class CountServiceImpl implements CountService {
         exchangeList.add(EnumExchange.HUOBI.getExchangId());
         exchangeList.add(EnumExchange.BINANCE.getExchangId());
         exchangeList.add(EnumExchange.BW.getExchangId());
-        exchangeList.add(EnumExchange.EXX.getExchangId());
+//        exchangeList.add(EnumExchange.EXX.getExchangId());
         for(String action : actionList){
             for(Integer exchange : exchangeList) {
                 String exchangeName = EnumExchange.getName(exchange);
