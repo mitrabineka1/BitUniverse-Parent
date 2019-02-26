@@ -90,13 +90,13 @@ public class CountServiceImpl implements CountService {
                 String amount = RedisUtil.searchString(redis, key);
                 switch (action) {
                     case "big":
-                        m.put(exchangeName + "大单", new BigDecimal(amount));
+                        m.put(exchangeName + "大单", new BigDecimal(amount == null ? "0" : amount));
                         break;
                     case "mid":
-                        m.put(exchangeName +"中单", new BigDecimal(amount));
+                        m.put(exchangeName +"中单", new BigDecimal(amount == null ? "0" : amount));
                         break;
                     case "small":
-                        m.put(exchangeName +"小单", new BigDecimal(amount));
+                        m.put(exchangeName +"小单", new BigDecimal(amount == null ? "0" : amount));
                         break;
                 }
             }
