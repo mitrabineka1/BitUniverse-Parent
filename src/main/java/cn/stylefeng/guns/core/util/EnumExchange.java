@@ -9,7 +9,8 @@ public enum EnumExchange {
     OKEX(1, "OKEX"),
     HUOBI(2, "HUOBI"),
     BINANCE(3, "BINANCE"),
-    BW(4, "BW");
+    BW(4, "BW"),
+    EXX(5, "EXX");
     private final int exchangId;
     private final String desc;
     EnumExchange(int exchangId, String desc){
