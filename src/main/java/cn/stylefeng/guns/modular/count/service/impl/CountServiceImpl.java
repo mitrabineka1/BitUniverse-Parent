@@ -77,7 +77,7 @@ public class CountServiceImpl implements CountService {
         actionList.add("mid");
         actionList.add("small");
         Map<String, BigDecimal> m = new HashMap<>();
-        List<Integer> exchangeList = new LinkedList<>();
+        List<Integer> exchangeList = new ArrayList<>();
         exchangeList.add(EnumExchange.OKEX.getExchangId());
         exchangeList.add(EnumExchange.HUOBI.getExchangId());
         exchangeList.add(EnumExchange.BINANCE.getExchangId());
